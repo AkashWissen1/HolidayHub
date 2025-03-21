@@ -25,14 +25,14 @@ public class ClientController {
     }
 
     // 2) Get client by ID
-    @PostMapping("/get")
+    @GetMapping("/get")
     public ResponseEntity<Client> getClient(@RequestBody ClientIdDto body) {
         Client c = svc.getClientById(body.getClientId());
         return ResponseEntity.ok(c);
     }
 
     // 3) Get all clients
-    @PostMapping("/all")
+    @GetMapping("/all")
     public ResponseEntity<List<Client>> getAllClients() {
         return ResponseEntity.ok(svc.getAllClients());
     }
