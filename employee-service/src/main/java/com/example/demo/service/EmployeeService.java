@@ -98,13 +98,12 @@ public class EmployeeService {
     
         Long clientId = employee.getClientId(); // Get clientId from employee
     
-        // Define the URL with the path variable
-        String url = "http://HOLIDAY-SERVICE/holidays/client/" + clientId;
+        // Use service name in URL
+        String url = "http://holiday-service/holidays/client/" + clientId;  // Make sure the name matches Eureka registration
     
-        // Make a GET request
         ResponseEntity<HolidayResponseDTO[]> response = restTemplate.getForEntity(url, HolidayResponseDTO[].class);
     
-        // Convert array to list and return
         return Arrays.asList(response.getBody());
     }
+    
 }
