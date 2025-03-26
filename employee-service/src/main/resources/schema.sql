@@ -1,4 +1,4 @@
-CREATE TABLE employees (
+CREATE TABLE IF NOT EXISTS employees (
 	employee_id SERIAL PRIMARY KEY,
 	employee_name VARCHAR(100) NOT NULL,
 	designation VARCHAR(50) NOT NULL,
