@@ -98,15 +98,11 @@ public class EmployeeService {
     
         Long clientId = employee.getClientId(); // Get clientId from employee
     
-        // Create DTO with clientId
-        HolidayCreateDto requestDto = new HolidayCreateDto();
-        requestDto.setClientId(clientId);
+        // Define the URL with the path variable
+        String url = "http://localhost:8082/holidays/client/" + clientId;
     
-        // Define the target URL for the holiday service
-        String url = "http://localhost:8082/holidays/client"; 
-    
-        // Make a POST request since GET cannot have a request body
-        ResponseEntity<HolidayResponseDTO[]> response = restTemplate.postForEntity(url, requestDto, HolidayResponseDTO[].class);
+        // Make a GET request
+        ResponseEntity<HolidayResponseDTO[]> response = restTemplate.getForEntity(url, HolidayResponseDTO[].class);
     
         // Convert array to list and return
         return Arrays.asList(response.getBody());

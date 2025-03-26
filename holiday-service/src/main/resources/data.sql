@@ -1,5 +1,22 @@
 INSERT INTO holidays (holiday_date, holiday_name, client_id)
 VALUES
-('2025-01-01', 'New Year', 1),
-('2025-03-15', 'Spring Festival', 1),
-('2025-04-10', 'Founders Day', 2);
+('2025-03-31', 'Good Friday', 1),
+('2025-04-14', 'Ambedkar Jayanti', 2),
+('2025-05-01', 'Labour Day', 3),
+('2025-05-25', 'Eid-ul-Fitr', 4),
+('2025-06-15', 'Bakrid', 5),
+('2025-08-15', 'Independence Day', 6),
+('2025-08-22', 'Raksha Bandhan', 7),
+('2025-10-02', 'Gandhi Jayanti', 8),
+('2025-10-23', 'Dussehra', 9),
+('2025-11-14', 'Diwali', 10),
+('2025-12-25', 'Christmas', 1),
+('2025-07-04', 'USA Independence Day', 2),
+('2025-11-26', 'Thanksgiving', 3),
+('2025-01-01', 'New Year', 4),
+('2025-03-08', 'International Women’s Day', 5),
+('2025-04-01', 'Annual Closing', 6),
+('2025-07-10', 'Muharram', 7),
+('2025-09-05', 'Teacher’s Day', 8),
+('2025-10-31', 'Halloween', 9),
+('2025-12-31', 'New Year’s Eve', 10);

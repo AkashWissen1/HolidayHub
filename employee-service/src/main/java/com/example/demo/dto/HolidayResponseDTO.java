@@ -3,18 +3,18 @@ package com.example.demo.dto;
 import java.time.LocalDate;
 
 public class HolidayResponseDTO {
-    private Long holidayId;
+    private Long id;
     private LocalDate holidayDate;
     private String holidayName;
     private Long clientId;
 
     // Getters and Setters
-    public Long getHolidayId() {
-        return holidayId;
+    public Long getId() {
+        return id;
     }
 
-    public void setHolidayId(Long holidayId) {
-        this.holidayId = holidayId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public LocalDate getHolidayDate() {

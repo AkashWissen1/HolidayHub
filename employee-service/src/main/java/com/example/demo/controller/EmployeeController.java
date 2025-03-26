@@ -53,6 +53,7 @@ public class EmployeeController {
 
     @GetMapping("/{employeeId}/holidays")
     public ResponseEntity<List<HolidayResponseDTO>> getHolidaysForEmployee(@PathVariable Long employeeId) {
-        return ResponseEntity.ok(employeeService.getHolidaysForEmployee(employeeId));
+        List<HolidayResponseDTO> holidays = employeeService.getHolidaysForEmployee(employeeId);
+        return ResponseEntity.ok(holidays);
     }
 }
