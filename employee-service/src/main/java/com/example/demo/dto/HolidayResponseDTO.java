@@ -13,7 +13,7 @@ public class HolidayResponseDTO {
         return id;
     }
 
-    public void setId(Long id) {
+    public void set3Id(Long id) {
         this.id = id;
     }
 
