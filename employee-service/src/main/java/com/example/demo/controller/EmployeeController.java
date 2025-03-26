@@ -5,9 +5,11 @@ import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.dto.EmployeeRequestDTO;
 import com.example.demo.dto.EmployeeResponseDTO;
+import com.example.demo.dto.HolidayResponseDTO;
 import com.example.demo.service.EmployeeService;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -47,5 +49,10 @@ public class EmployeeController {
         boolean deleted = employeeService.deleteEmployee(id);
         return deleted ? ResponseEntity.ok("Employee deleted successfully")
                        : ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/{employeeId}/holidays")
+    public ResponseEntity<List<HolidayResponseDTO>> getHolidaysForEmployee(@PathVariable Long employeeId) {
+        return ResponseEntity.ok(employeeService.getHolidaysForEmployee(employeeId));
     }
 }

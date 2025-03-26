@@ -1,12 +1,19 @@
 package com.example.demo.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.example.demo.dto.EmployeeRequestDTO;
 import com.example.demo.dto.EmployeeResponseDTO;
+import com.example.demo.dto.HolidayCreateDto;
+import com.example.demo.dto.HolidayResponseDTO;
 import com.example.demo.model.Employee;
 import com.example.demo.repository.EmployeeRepository;
 
+import org.springframework.web.client.RestTemplate;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -14,6 +21,8 @@ import java.util.stream.Collectors;
 public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
+    @Autowired
+    private RestTemplate restTemplate;
 
     public EmployeeService(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
@@ -81,5 +90,25 @@ public class EmployeeService {
             return true;
         }
         return false;
+    }
+
+    public List<HolidayResponseDTO> getHolidaysForEmployee(Long employeeId) {
+        Employee employee = employeeRepository.findById(employeeId)
+                .orElseThrow(() -> new RuntimeException("Employee not found: " + employeeId));
+    
+        Long clientId = employee.getClientId(); // Get clientId from employee
+    
+        // Create DTO with clientId
+        HolidayCreateDto requestDto = new HolidayCreateDto();
+        requestDto.setClientId(clientId);
+    
+        // Define the target URL for the holiday service
+        String url = "http://localhost:8082/holidays/client"; 
+    
+        // Make a POST request since GET cannot have a request body
+        ResponseEntity<HolidayResponseDTO[]> response = restTemplate.postForEntity(url, requestDto, HolidayResponseDTO[].class);
+    
+        // Convert array to list and return
+        return Arrays.asList(response.getBody());
     }
 }

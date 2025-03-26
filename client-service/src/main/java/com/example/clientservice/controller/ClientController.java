@@ -25,14 +25,14 @@ public class ClientController {
     }
 
     // 2) Get client by ID
-    @GetMapping("/get")
-    public ResponseEntity<Client> getClient(@RequestBody ClientIdDto body) {
-        Client c = svc.getClientById(body.getClientId());
+    @GetMapping("/{clientId}")
+    public ResponseEntity<Client> getClient(@PathVariable Long clientId) {
+        Client c = svc.getClientById(clientId);
         return ResponseEntity.ok(c);
     }
 
     // 3) Get all clients
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<List<Client>> getAllClients() {
         return ResponseEntity.ok(svc.getAllClients());
     }

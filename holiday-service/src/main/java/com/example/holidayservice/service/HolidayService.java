@@ -1,7 +1,6 @@
 package com.example.holidayservice.service;
 
 import com.example.holidayservice.dto.HolidayCreateDto;
-import com.example.holidayservice.dto.HolidayIdDto;
 import com.example.holidayservice.dto.HolidayUpdateDto;
 import com.example.holidayservice.entity.Holiday;
 import com.example.holidayservice.repository.HolidayRepository;
