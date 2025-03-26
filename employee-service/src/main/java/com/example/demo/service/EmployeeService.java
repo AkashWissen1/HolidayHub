@@ -99,7 +99,7 @@ public class EmployeeService {
         Long clientId = employee.getClientId(); // Get clientId from employee
     
         // Define the URL with the path variable
-        String url = "http://localhost:8082/holidays/client/" + clientId;
+        String url = "http://HOLIDAY-SERVICE/holidays/client/" + clientId;
     
         // Make a GET request
         ResponseEntity<HolidayResponseDTO[]> response = restTemplate.getForEntity(url, HolidayResponseDTO[].class);
