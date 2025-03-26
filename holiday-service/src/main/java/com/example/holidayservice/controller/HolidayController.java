@@ -26,22 +26,22 @@ public class HolidayController {
     }
 
     // 2) Get holiday by ID
-    @GetMapping("/get")
-    public ResponseEntity<Holiday> getHoliday(@RequestBody HolidayIdDto body) {
-        Holiday holiday = svc.getHolidayById(body.getHolidayId());
+    @GetMapping("/{holidayId}")
+    public ResponseEntity<Holiday> getHoliday(@PathVariable Long holidayId) {
+        Holiday holiday = svc.getHolidayById(holidayId);
         return ResponseEntity.ok(holiday);
     }
 
     // 3) Get all holidays
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<List<Holiday>> getAllHolidays() {
         return ResponseEntity.ok(svc.getAllHolidays());
     }
 
     // 4) Get holidays for a client
-    @GetMapping("/client")
-    public ResponseEntity<List<Holiday>> getHolidaysForClient(@RequestBody HolidayCreateDto body) {
-        List<Holiday> list = svc.getHolidaysForClient(body.getClientId());
+    @GetMapping("/client/{clientId}")  
+    public ResponseEntity<List<Holiday>> getHolidaysForClient(@PathVariable Long clientId) {
+        List<Holiday> list = svc.getHolidaysForClient(clientId);
         return ResponseEntity.ok(list);
     }
 
