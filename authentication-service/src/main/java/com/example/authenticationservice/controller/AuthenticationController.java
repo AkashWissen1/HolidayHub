@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.authenticationservice.dto.ChangePasswordDto;
@@ -17,17 +18,13 @@ import com.example.authenticationservice.entities.Employee;
 import com.example.authenticationservice.service.AuthenticationServices;
 
 @RestController
-
+@RequestMapping("/auth")
 public class AuthenticationController {
 	
 	@Autowired
 	AuthenticationServices auth;
 	
-	@GetMapping("/")
-	public List<Employee> getAllEmployee()
-	{
-		return auth.getAllEmployee();
-	}
+
 	
 	@PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody LoginDto dto) 

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,16 +20,13 @@ import com.example.hrservice.entities.Holiday;
 import com.example.hrservice.services.HRService;
 
 @RestController
+@RequestMapping("/hr")
 public class HRController {
 	
 	@Autowired
 	HRService hrservice;
 	
-	@GetMapping("/hr")
-	public ResponseEntity<List<Employee>> getEmployee()
-	{
-		return ResponseEntity.ok(hrservice.getEmployee());
-	}
+	
 	
 	@GetMapping("/search/employee/{employeeId}")
 	public ResponseEntity<List<Holiday>> getHolidaysForEmployee(@PathVariable Long employeeId)
