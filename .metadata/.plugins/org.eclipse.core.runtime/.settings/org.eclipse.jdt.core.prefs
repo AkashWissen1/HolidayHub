@@ -1,5 +1,9 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 org.eclipse.jdt.core.classpathVariable.M2_REPO=C\:/Users/Wissen/.m2/repository
+=======
+org.eclipse.jdt.core.classpathVariable.M2_REPO=C\:/Users/User/.m2/repository
+>>>>>>> f391b572e06f27c43a1c6affa4bd819c07f14a9d
 org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=21
 org.eclipse.jdt.core.compiler.compliance=21

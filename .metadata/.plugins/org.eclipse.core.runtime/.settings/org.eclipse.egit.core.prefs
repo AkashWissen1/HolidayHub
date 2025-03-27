@@ -1,4 +1,7 @@
-GitRepositoriesView.GitDirectories=C\:\\Users\\Wissen\\Desktop\\Holiday_Project\\.git;
-GitRepositoriesView.GitDirectories.relative=C\:\\Users\\Wissen\\Desktop\\Holiday_Project\\.git;
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=f391b572e06f27c43a1c6affa4bd819c07f14a9d
+GitRepositoriesView.GitDirectories=C\:\\Users\\Wissen\\Desktop\\Holiday_Project\\.git;C\:\\Users\\Wissen\\Desktop\\Holiday_Project\\HolidayHub\\.git;
+GitRepositoriesView.GitDirectories.relative=C\:\\Users\\Wissen\\Desktop\\Holiday_Project\\.git;.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1
