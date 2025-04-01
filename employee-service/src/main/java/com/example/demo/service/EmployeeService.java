@@ -5,7 +5,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.example.demo.dto.EmployeeRequestDTO;
 import com.example.demo.dto.EmployeeResponseDTO;
-import com.example.demo.dto.HolidayCreateDto;
 import com.example.demo.dto.HolidayResponseDTO;
 import com.example.demo.model.Employee;
 import com.example.demo.repository.EmployeeRepository;
@@ -13,7 +12,6 @@ import com.example.demo.repository.EmployeeRepository;
 import org.springframework.web.client.RestTemplate;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
