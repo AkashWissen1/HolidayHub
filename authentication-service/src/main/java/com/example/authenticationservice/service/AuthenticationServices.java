@@ -23,7 +23,7 @@ public class AuthenticationServices {
 		return auth.findAll();
 	}
 	
-	public String login(LoginDto login) 
+	public Employee login(LoginDto login) 
 	{
 	    Optional<Employee> employee = auth.findByEmail(login.getEmail());
 
@@ -32,16 +32,16 @@ public class AuthenticationServices {
 	        Employee emp = employee.get();
 	        if (emp.getPassword().equals(login.getPassword())) 
 	        {
-	            return emp.getDesignation(); 
+	            return emp; 
 	        } 
 	        else 
 	        {
-	            return "Invalid password!";
+	            return null;
 	        }
 	    } 
 	    else 
 	    {
-	        return "Invalid email!";
+	        return null;
 	    }
 	}
 	

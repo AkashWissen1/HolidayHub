@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.authenticationservice.dto.ChangePasswordDto;
 import com.example.authenticationservice.dto.ForgetPasswordDto;
 import com.example.authenticationservice.dto.LoginDto;
+import com.example.authenticationservice.entities.Employee;
 import com.example.authenticationservice.service.AuthenticationServices;
 
 @RestController
@@ -25,7 +26,7 @@ public class AuthenticationController {
 
 	
 	@PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginDto dto) 
+    public ResponseEntity<Employee> login(@RequestBody LoginDto dto) 
 	{
 		return ResponseEntity.ok(auth.login(dto));
     }
