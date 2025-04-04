@@ -23,27 +23,12 @@ public class AuthenticationServices {
 		return auth.findAll();
 	}
 	
-	public Employee login(LoginDto login) 
-	{
-	    Optional<Employee> employee = auth.findByEmail(login.getEmail());
-
-	    if (employee.isPresent()) 
-	    {
-	        Employee emp = employee.get();
-	        if (emp.getPassword().equals(login.getPassword())) 
-	        {
-	            return emp; 
-	        } 
-	        else 
-	        {
-	            return null;
-	        }
-	    } 
-	    else 
-	    {
-	        return null;
-	    }
+	public Employee login(LoginDto login) {
+		return auth.findByEmail(login.getEmail())
+			.filter(emp -> emp.getPassword().equals(login.getPassword())) 
+			.orElseThrow(() -> new RuntimeException("Invalid email or password")); 
 	}
+	
 	
 	public String changePassword(ChangePasswordDto dto) 
 	{
