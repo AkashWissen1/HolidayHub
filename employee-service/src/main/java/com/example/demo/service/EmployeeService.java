@@ -81,6 +81,19 @@ public class EmployeeService {
         });
     }
 
+    public Employee updateEmployeeWithoutPassword(Long id, EmployeeRequestDTO dto) {
+        Employee existingEmployee = employeeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
+    
+        existingEmployee.setEmployeeName(dto.getEmployeeName());
+        existingEmployee.setDesignation(dto.getDesignation());
+        existingEmployee.setEmail(dto.getEmail());
+    
+        // Password is NOT updated here
+        return employeeRepository.save(existingEmployee);
+    }
+    
+
     // Delete Employee
     public boolean deleteEmployee(Long id) {
         if (employeeRepository.existsById(id)) {
