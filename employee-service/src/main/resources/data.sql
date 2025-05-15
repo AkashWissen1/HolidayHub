@@ -1,29 +1,52 @@
-INSERT INTO employees (employee_name, designation, email, password, client_id)
-VALUES
-	('Amit Kumar', 'Admin', 'amit@wissen.com', 'Amit@kumar1', NULL),
-	('Priya Sharma', 'HR', 'priya@wissen.com', 'Priya@sharma2', NULL),
-	('Rahul Verma', 'Employee', 'rahul@wissen.com', 'Rahul@verma3', 1),
-	('Neha Gupta', 'HR', 'neha@wissen.com', 'Neha@gupta4', NULL),
-	('Vikram Singh', 'Employee', 'vikram@wissen.com', 'Vikram@singh5', 2),
-	('Riya Patel', 'HR', 'riya@wissen.com', 'Riya@patel6', NULL),
-	('Sanjay Mehta', 'Employee', 'sanjay@wissen.com', 'Sanjay@mehta7', 3),
-	('Anjali Yadav', 'Employee', 'anjali@wissen.com', 'Anjali@yadav8', 4),
-	('Manish Tiwari', 'HR', 'manish@wissen.com', 'Manish@tiwari9', NULL),
-	('Swati Joshi', 'Employee', 'swati@wissen.com', 'Swati@joshi10', 5),
-	('Kunal Mishra', 'Employee', 'kunal@wissen.com', 'Kunal@mishra11', 6),
-	('Arjun Desai', 'HR', 'arjun@wissen.com', 'Arjun@desai12', NULL),
-	('Deepak Sharma', 'Employee', 'deepak@wissen.com', 'Deepak@sharma13', 7),
-	('Sangeeta Nair', 'Employee', 'sangeeta@wissen.com', 'Sangeeta@nair14', 8),
-	('Rohit Kulkarni', 'Employee', 'rohit@wissen.com', 'Rohit@kulkarni15', 9),
-	('Pooja Chauhan', 'Employee', 'pooja@wissen.com', 'Pooja@chauhan16', 10),
-	('Harsh Vardhan', 'Employee', 'harsh@wissen.com', 'Harsh@vardhan17', 1),
-	('Anita Pillai', 'Employee', 'anita@wissen.com', 'Anita@pillai18', 2),
-	('Gautam Bhatt', 'Employee', 'gautam@wissen.com', 'Gautam@bhatt19', 3),
-	('Meera Iyer', 'Employee', 'meera@wissen.com', 'Meera@iyer20', 4),
-	('Yashwanth Rao', 'Employee', 'yashwanth@wissen.com', 'Yashwanth@rao21', 5),
-	('Sneha Kapoor', 'Employee', 'sneha@wissen.com', 'Sneha@kapoor22', 6),
-	('Rajesh Khanna', 'HR', 'rajesh@wissen.com', 'Rajesh@khanna23', NULL),
-	('Tarun Malhotra', 'Employee', 'tarun@wissen.com', 'Tarun@malhotra24', 7),
-	('Komal Singh', 'Employee', 'komal@wissen.com', 'Komal@singh25', 8),
-	('Vivek Anand', 'Employee', 'vivek@wissen.com', 'Vivek@anand26', 9),
-	('Divya Ramesh', 'Employee', 'divya@wissen.com', 'Divya@ramesh27', 10);
+INSERT INTO employees (employee_id, client_id, designation, email, employee_name, password) VALUES
+-- Software Engineers
+(1, 3, 'Software Engineer', 'rahul@wissen.com', 'Rahul Kumar', 'Rahul@kumar3'),
+(2, 5, 'Software Engineer', 'neha@wissen.com', 'Neha Gupta', 'Neha@gupta4'),
+(3, 2, 'Software Engineer', 'amit@wissen.com', 'Amit Singh', 'Amit@singh5'),
+
+-- Associate Software Engineers
+(4, 7, 'Associate Software Engineer', 'pooja@wissen.com', 'Pooja Patel', 'Pooja@patel6'),
+(5, 1, 'Associate Software Engineer', 'vikram@wissen.com', 'Vikram Reddy', 'Vikram@reddy7'),
+(6, 4, 'Associate Software Engineer', 'divya@wissen.com', 'Divya Sharma', 'Divya@sharma8'),
+
+-- Senior Software Engineers
+(7, 9, 'Senior Software Engineer', 'rajesh@wissen.com', 'Rajesh Verma', 'Rajesh@verma9'),
+(8, 6, 'Senior Software Engineer', 'ananya@wissen.com', 'Ananya Mishra', 'Ananya@mishra10'),
+(9, 3, 'Senior Software Engineer', 'karan@wissen.com', 'Karan Malhotra', 'Karan@malhotra11'),
+
+-- Tech Leads
+(10, 8, 'Tech Lead', 'meera@wissen.com', 'Meera Iyer', 'Meera@iyer12'),
+(11, 2, 'Tech Lead', 'suresh@wissen.com', 'Suresh Kumar', 'Suresh@kumar13'),
+
+-- Project Managers
+(12, 5, 'Project Manager', 'nisha@wissen.com', 'Nisha Kapoor', 'Nisha@kapoor14'),
+(13, 10, 'Project Manager', 'vivek@wissen.com', 'Vivek Sharma', 'Vivek@sharma15'),
+
+-- HR Team
+(14, NULL, 'HR', 'deepa@wissen.com', 'Deepa Nair', 'Deepa@nair16'),
+(15, NULL, 'HR', 'arjun@wissen.com', 'Arjun Menon', 'Arjun@menon17'),
+
+-- QA Team
+(16, 4, 'QA Engineer', 'sanjay@wissen.com', 'Sanjay Joshi', 'Sanjay@joshi18'),
+(17, 7, 'QA Engineer', 'ritu@wissen.com', 'Ritu Desai', 'Ritu@desai19'),
+(18, 1, 'Senior QA Engineer', 'varun@wissen.com', 'Varun Kapoor', 'Varun@kapoor20'),
+
+-- DevOps Team
+(19, 9, 'DevOps Engineer', 'pradeep@wissen.com', 'Pradeep Kumar', 'Pradeep@kumar21'),
+(20, 3, 'Senior DevOps Engineer', 'anjali@wissen.com', 'Anjali Singh', 'Anjali@singh22'),
+
+-- Product Team
+(21, NULL, 'Product Manager', 'rohit@wissen.com', 'Rohit Sharma', 'Rohit@sharma23'),
+(22, NULL, 'Product Owner', 'kavita@wissen.com', 'Kavita Patel', 'Kavita@patel24'),
+
+-- UI/UX Team
+(23, 6, 'UI Designer', 'aditya@wissen.com', 'Aditya Nair', 'Aditya@nair25'),
+(24, 8, 'UX Designer', 'sneha@wissen.com', 'Sneha Reddy', 'Sneha@reddy26'),
+(25, 2, 'Senior UI/UX Designer', 'nikhil@wissen.com', 'Nikhil Menon', 'Nikhil@menon27'),
+
+-- Additional Engineers
+(26, 5, 'Backend Engineer', 'jayesh@wissen.com', 'Jayesh Patel', 'Jayesh@patel28'),
+(27, 7, 'Frontend Engineer', 'monica@wissen.com', 'Monica Singh', 'Monica@singh29'),
+(28, 4, 'Full Stack Developer', 'rahul.s@wissen.com', 'Rahul Sharma', 'Rahul@sharma30'),
+(29, 10, 'Database Administrator', 'priya.m@wissen.com', 'Priya Mehta', 'Priya@mehta31'),
+(30, 1, 'System Architect', 'vijay@wissen.com', 'Vijay Kumar', 'Vijay@kumar32');

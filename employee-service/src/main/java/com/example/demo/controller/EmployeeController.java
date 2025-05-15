@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.demo.dto.EmployeeRequestDTO;
 import com.example.demo.dto.EmployeeResponseDTO;
 import com.example.demo.dto.HolidayResponseDTO;
+import com.example.demo.model.Employee;
 import com.example.demo.service.EmployeeService;
 
 import java.util.List;
@@ -43,6 +44,16 @@ public class EmployeeController {
         Optional<EmployeeResponseDTO> updated = employeeService.updateEmployee(id, updatedEmployeeDTO);
         return updated.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+    @PutMapping("/update-employee/{id}")
+    public ResponseEntity<Employee> updateEmployeeWithoutPassword(
+            @PathVariable Long id,
+            @RequestBody EmployeeRequestDTO employeeRequestDTO) {
+
+        Employee updatedEmployee = employeeService.updateEmployeeWithoutPassword(id, employeeRequestDTO);
+        return ResponseEntity.ok(updatedEmployee);
+    }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteEmployee(@PathVariable Long id) {
