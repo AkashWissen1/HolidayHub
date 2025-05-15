@@ -1,0 +1,95 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "1. Eureka Server",
+            "request": "launch",
+            "mainClass": "com.example.EurekaServerApplication",
+            "projectName": "eureka-server",
+            "env": {
+                "SPRING_PROFILES_ACTIVE": "default"
+            }
+        },
+        {
+            "type": "java",
+            "name": "2. API Gateway",
+            "request": "launch",
+            "mainClass": "com.example.apigateway.ApiGatewayApplication",
+            "projectName": "api-gateway",
+            "env": {
+                "SPRING_PROFILES_ACTIVE": "default"
+            }
+        },
+        {
+            "type": "java",
+            "name": "3. Authentication Service",
+            "request": "launch",
+            "mainClass": "com.example.authenticationservice.AuthenticationServiceApplication",
+            "projectName": "authentication-service",
+            "env": {
+                "SPRING_PROFILES_ACTIVE": "default"
+            }
+        },
+        {
+            "type": "java",
+            "name": "4. Client Service",
+            "request": "launch",
+            "mainClass": "com.example.clientservice.ClientServiceApplication",
+            "projectName": "client-service",
+            "env": {
+                "SPRING_PROFILES_ACTIVE": "default"
+            }
+        },
+        {
+            "type": "java",
+            "name": "5. Employee Service",
+            "request": "launch",
+            "mainClass": "com.example.employeeservice.EmployeeServiceApplication",
+            "projectName": "employee-service",
+            "env": {
+                "SPRING_PROFILES_ACTIVE": "default"
+            }
+        },
+        {
+            "type": "java",
+            "name": "6. Holiday Service",
+            "request": "launch",
+            "mainClass": "com.example.holidayservice.HolidayServiceApplication",
+            "projectName": "holiday-service",
+            "env": {
+                "SPRING_PROFILES_ACTIVE": "default"
+            }
+        },
+        {
+            "type": "java",
+            "name": "Launch All Services",
+            "request": "launch",
+            "mainClass": "",
+            "projectName": "",
+            "preLaunchTask": "wait-for-eureka",
+            "compounds": [
+                "1. Eureka Server",
+                "2. API Gateway",
+                "3. Authentication Service",
+                "4. Client Service",
+                "5. Employee Service",
+                "6. Holiday Service"
+            ]
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch All Services",
+            "configurations": [
+                "1. Eureka Server",
+                "2. API Gateway",
+                "3. Authentication Service",
+                "4. Client Service",
+                "5. Employee Service",
+                "6. Holiday Service"
+            ],
+            "stopAll": true
+        }
+    ]
+}
