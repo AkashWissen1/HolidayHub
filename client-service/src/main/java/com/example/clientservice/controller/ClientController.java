@@ -10,7 +10,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/clients")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ClientController {
 
     private final ClientService svc;

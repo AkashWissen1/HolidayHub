@@ -19,7 +19,7 @@ import com.example.hrservice.services.HRService;
 
 @RestController
 @RequestMapping("/hr")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+
 public class HRController {
 	
 	@Autowired
